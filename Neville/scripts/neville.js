@@ -33,9 +33,9 @@ function nevilleFormula(X, Y){
 }
 
 function getResult(){
-	let data = getData();
-	let X = data.X;
-	let Y = data.Y;
+	var data = getData();
+	var X = data.X;
+	var Y = data.Y;
 	let input = parseFloat(document.getElementById("in").value);
 
 	if(!valid(X,Y, input))

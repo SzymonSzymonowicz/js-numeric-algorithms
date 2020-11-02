@@ -12,7 +12,7 @@ function drawGraph(X, Y) {
             label: 'P(x)',
             x: range(-argRange,argRange).reverse(),
             backgroundColor: 'rgb(255, 99, 132)',
-            function: function(input) { return neville(X,Y,input) },
+            function: function(input) { return nevilleResult(X,Y,input) },
             data: [],
             y: [],
             borderColor: 'rgb(255, 99, 132)',
