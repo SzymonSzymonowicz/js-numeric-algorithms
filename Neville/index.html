@@ -8,48 +8,52 @@
 	<script type="text/javascript" lang="javascript" src="scripts/expandableTable.js"></script>
 	<script type="text/javascript" lang="javascript" src="scripts/getData.js"></script>
 	<script type="text/javascript" lang="javascript" src="scripts/drawGraph.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+	<script src="https://unpkg.com/mathjs@7.6.0/dist/math.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>
+	<script src="https://github.com/asciimath/asciimathml/blob/master/ASCIIMathML.js"></script>
 </head>
 <body>
-	<div id="container">
-		<div id="title">METODA NEVILLA</div>
-		<div id="menu">
-			<div id="inputBar">
-				<table id="dataTab">
-					<tr>
-						<td>X</td>
-						<td><input  onblur="expandTable(this.parentElement.cellIndex)" placeholder="..."></td>
-					</tr>
-					<tr>
-						<td>Y</td>
-						<td><input onblur="expandTable(this.parentElement.cellIndex)" placeholder="..."></td>
-					</tr>
-				</table>
+<div id="container">
+	<div id="title">METODA NEVILLA</div>
+	<div id="menu">
+		<div id="inputBar">
+			<table id="dataTab">
+				<tr>
+					<td>X</td>
+					<td><input  onblur="expandTable(this.parentElement.cellIndex)" placeholder="..."></td>
+				</tr>
+				<tr>
+					<td>Y</td>
+					<td><input onblur="expandTable(this.parentElement.cellIndex)" placeholder="..."></td>
+				</tr>
+			</table>
 
-				<input type="file" id="fileInp">
-				<label for="fileInp">Wybierz plik</label>
+			<input type="file" id="fileInp">
+			<label for="fileInp">Wybierz plik</label>
 
-				<div id="xinput">
-					<label for="in">Wartosc szukanego x:</label>
-					<input type="text" id="in" name="in">
-				</div>
-
-				<div id="rangeSetting">
-					<label for="argRange">Zakres wykresu OX</label>
-					<input type="range" id="argRange" name="argRange" min="10" max="1000" value="100" step="5" oninput="amount.value=argRange.value">
-					<output name="amount" id="amount" for="rangeInput">100</output>
-				</div>
-
-				<button id="getResult" onclick="getResult()">Oblicz</button>
+			<div id="xinput">
+				<label for="in">Wartosc szukanego x:</label>
+				<input type="text" id="in" name="in">
 			</div>
-			<div id="resultBar">
-				<div id="graph">
-					<canvas id="myChart" width="400" height="400"></canvas>
-				</div>
-				<div id="formula">formula</div>
-				<div id="result"></div>
+
+			<div id="rangeSetting">
+				<label for="argRange">Zakres wykresu OX</label>
+				<input type="range" id="argRange" name="argRange" min="10" max="1000" value="100" step="5" oninput="amount.value=argRange.value">
+				<output name="amount" id="amount" for="rangeInput">100</output>
 			</div>
+
+			<button id="getResult" onclick="getResult()">Oblicz</button>
+		</div>
+		<div id="resultBar">
+			<div id="graph">
+				<canvas id="myChart" width="400" height="400"></canvas>
+			</div>
+			<div id="formula"></div>
+			<div id="result"></div>
 		</div>
 	</div>
+</div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 </html>
