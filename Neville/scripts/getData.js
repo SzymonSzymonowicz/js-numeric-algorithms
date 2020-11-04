@@ -5,13 +5,13 @@ function getData(){
     var Y = [];
 
     // both rows are always equal in length
-    for(var i = 1; i < tab.rows[0].cells.length-2; i++){
+    for(var i = 1; i < tab.rows[0].cells.length-1; i++){
         X.push(parseFloat(tab.rows[0].cells[i].firstElementChild.value));
         Y.push(parseFloat(tab.rows[1].cells[i].firstElementChild.value));
     }
 
-    console.log(X);
-    console.log(Y);
+/*    console.log(X);
+    console.log(Y);*/
 
     return {X, Y};
 }

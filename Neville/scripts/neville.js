@@ -32,15 +32,22 @@ function nevilleFormula(X, Y){
 	return math.rationalize(result[result.length-1][result.length-1]);
 }
 
-function getResult(){
+function getResult(X,Y,input){
 	var data = getData();
-	var X = data.X;
-	var Y = data.Y;
-	let input = parseFloat(document.getElementById("in").value);
+	X = data.X;
+	Y = data.Y;
+	input = parseFloat(document.getElementById("in").value);
 
 	if(!valid(X,Y, input))
 		return;
 
+	calculator(X,Y,input)
+}
+
+function calculator(X,Y,input){
+	console.log(X)
+	console.log(Y)
+	console.log(input)
 	let formulaOutput  = document.getElementById('formula');
 	formulaOutput.innerHTML = '\`' + nevilleFormula(X,Y) + '\`';
 
@@ -50,6 +57,31 @@ function getResult(){
 	MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 	drawGraph(X, Y);
+}
+
+function wyswietl(event){
+	var reader = new FileReader();
+	reader.readAsText(event.target.files[0]);
+	var fileSatus = document.getElementById("labelChooseFile");
+
+	reader.onload = function(event) {
+		fileSatus.innerHTML = "Wczytano !"
+
+		var arr = reader.result.split("\n")
+		var X = arr[0].split(",").map(function(x){
+			return parseFloat(x)
+		});
+		var Y = arr[1].split(",").map(function(x){
+			return parseFloat(x)
+		});
+		var input = parseFloat(arr[2]);
+
+		if(!valid(X,Y, input))
+			return;
+
+		calculator(X,Y,input)
+
+	};
 }
 
 
