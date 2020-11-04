@@ -24,8 +24,8 @@ function nevilleFormula(X, Y){
 		result[i][0] = Y[i];
 	for (i = 1; i < len; i++) {
 		for (j = 1; j <= i; j++) {
-			result[i][j] = math.simplify("((" + "x" + "-" + X[i - j].toString() + ")*(" + result[i][j - 1].toString()+")" +
-				"- (" + "x" + "-" + X[i].toString() + ")*(" + result[i - 1][j - 1].toString() + "))/(" + X[i].toString() + "-" +  X[i - j].toString() + ")");
+			result[i][j] = math.simplify("((" + "x" + "-" + X[i - j].toString() + ")*(" + math.rationalize(result[i][j - 1]).toString()+")" +
+				"- (" + "x" + "-" + X[i].toString() + ")*(" + math.rationalize(result[i - 1][j - 1]).toString() + "))/(" + X[i].toString() + "-" +  X[i - j].toString() + ")");
 		}
 	}
 
