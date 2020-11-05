@@ -6,10 +6,9 @@ Neville's algorithm is an algorithm used for polynomial interpolation that was d
 
 [Wikipedia page](https://en.wikipedia.org/wiki/Neville%27s_algorithm)
 
-Currently set up on:
-http://nevills.infinityfreeapp.com/?i=1
+Currently set up [here](https://szymonszymonowicz.github.io/js-numeric-algorithms/Neville/index.html)
 
-###Libs
+### Libs
 - [Chart.js](https://www.chartjs.org/)
 - [Math.js](https://mathjs.org/)
 - [AsciiMath](http://asciimath.org/)
