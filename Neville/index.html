@@ -16,7 +16,7 @@
 </head>
 <body>
 <div id="container">
-	<div id="title">METODA NEVILLA</div>
+	<div id="title">ALGORYTM NEVILL'A</div>
 	<div id="menu">
 		<div id="inputBar">
 			<table id="dataTab">
@@ -29,10 +29,6 @@
 					<td><input onblur="expandTable(this.parentElement.cellIndex)" placeholder="..."></td>
 				</tr>
 			</table>
-
-			<input type="file" id="fileInp" onchange="wyswietl(event)">
-			<label for="fileInp" id="labelChooseFile">Wybierz plik</label>
-
 			<div id="xinput">
 				<label for="in">Wartosc szukanego x:</label>
 				<input type="text" id="in" name="in">
@@ -43,8 +39,11 @@
 				<input type="range" id="argRange" name="argRange" min="10" max="1000" value="100" step="5" oninput="amount.value=argRange.value">
 				<output name="amount" id="amount" for="rangeInput">100</output>
 			</div>
-
-			<button id="getResult" onclick="getResult()">Oblicz</button>
+			<div id="actionBar">
+				<button id="getResult" onclick="getResult()">Oblicz</button>
+				<input type="file" id="fileInp" onchange="getResultFromFile(event)">
+				<label for="fileInp" id="labelChooseFile">Wybierz plik</label>
+			</div>
 		</div>
 		<div id="resultBar">
 			<div id="graph">

@@ -10,26 +10,18 @@ function getData(){
         Y.push(parseFloat(tab.rows[1].cells[i].firstElementChild.value));
     }
 
-/*    console.log(X);
-    console.log(Y);*/
-
     return {X, Y};
 }
 
 function valid(X, Y, input){
-    // TO DO... validation of X, Y, input
-    // return true or false basing on validation
-    // many ifs, big if or switch smthg
     if(X.length !== Y.length){
-        alert("Error!");
+        alert("Error! Zbiory X i Y są różnej długości!");
         return false;
     }
-
     if(typeof input != "number"){
+        alert("Szukana wartość x nie jest liczbą!");
         return false
     }
-
-    // ITD.
 
     return true;
 }

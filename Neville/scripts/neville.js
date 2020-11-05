@@ -4,7 +4,7 @@ function nevilleResult(X, Y, input){
 	let result = Array.from(Array(len), () => new Array(len));
 
 	for (i = 0; i < len; i++)
-		result[i][0] = parseInt(Y[i]);
+		result[i][0] = parseFloat(Y[i]);
 	for (i = 1; i < len; i++) {
 		for (j = 1; j <= i; j++) {
 			result[i][j] = ((input - X[i - j])*(result[i][j - 1])
@@ -16,16 +16,15 @@ function nevilleResult(X, Y, input){
 }
 
 function nevilleFormula(X, Y){
-
 	let len = X.length;
 	let result = Array.from(Array(len), () => new Array(len));
 
 	for (i = 0; i < len; i++)
-		result[i][0] = Y[i];
+		result[i][0] = parseFloat(Y[i]);
 	for (i = 1; i < len; i++) {
 		for (j = 1; j <= i; j++) {
-			result[i][j] = math.simplify("((" + "x" + "-" + X[i - j].toString() + ")*(" + math.rationalize(result[i][j - 1]).toString()+")" +
-				"- (" + "x" + "-" + X[i].toString() + ")*(" + math.rationalize(result[i - 1][j - 1]).toString() + "))/(" + X[i].toString() + "-" +  X[i - j].toString() + ")");
+			result[i][j] = math.rationalize("((x-" + X[i - j].toString() + ")*(" + math.rationalize(result[i][j - 1]).toString()+")" +
+				"-(x-" + X[i] + ")*(" + math.simplify(result[i - 1][j - 1]).toString() + "))/(" + (X[i] -X[i - j]) + ")").toString();
 		}
 	}
 
@@ -41,13 +40,10 @@ function getResult(X,Y,input){
 	if(!valid(X,Y, input))
 		return;
 
-	calculator(X,Y,input)
+	calculate(X,Y,input)
 }
 
-function calculator(X,Y,input){
-	console.log(X)
-	console.log(Y)
-	console.log(input)
+function calculate(X,Y,input){
 	let formulaOutput  = document.getElementById('formula');
 	formulaOutput.innerHTML = '\`' + nevilleFormula(X,Y) + '\`';
 
@@ -59,7 +55,7 @@ function calculator(X,Y,input){
 	drawGraph(X, Y);
 }
 
-function wyswietl(event){
+function getResultFromFile(event){
 	var reader = new FileReader();
 	reader.readAsText(event.target.files[0]);
 	var fileSatus = document.getElementById("labelChooseFile");
@@ -79,9 +75,6 @@ function wyswietl(event){
 		if(!valid(X,Y, input))
 			return;
 
-		calculator(X,Y,input)
-
+		calculate(X,Y,input)
 	};
 }
-
-

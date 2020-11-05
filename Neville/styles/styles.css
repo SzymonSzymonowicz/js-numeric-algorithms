@@ -33,21 +33,26 @@ body{
 	display: flex;
 	flex-flow: row nowrap;
 }
-#inputBar{
+#inputBar, #resultBar{
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
 	justify-content: space-evenly;
 }
 #resultBar{
-	display: flex;
-	flex-flow: column nowrap;
-	align-items: center;
-	justify-content: space-evenly;
-
+	flex-grow: 1;
 }
+#actionBar{
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: stretch;
+	align-content: space-between;
+	justify-content: space-evenly;
+}
+
 input[type="file"] {
 	visibility: hidden;
+	width: 1px;
 }
 button, label[for="fileInp"] {
 	background-color: white;
