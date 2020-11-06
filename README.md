@@ -12,6 +12,7 @@ Currently set up [here](https://szymonszymonowicz.github.io/js-numeric-algorithm
 - [Chart.js](https://www.chartjs.org/)
 - [Math.js](https://mathjs.org/)
 - [AsciiMath](http://asciimath.org/)
+- [MathJax](https://www.mathjax.org/)
 
 
 
