@@ -4,7 +4,7 @@ function getResult(X,Y,input){
     Y = data.Y;
     input = parseFloat(document.getElementById("in").value);
 
-    if(!valid(X,Y, input))
+    if(!validate(X,Y, input, document.getElementById("dataTab")))
         return;
 
     calculate(X,Y,input)
@@ -39,7 +39,7 @@ function getResultFromFile(event){
         });
         var input = parseFloat(arr[2]);
 
-        if(!valid(X,Y, input))
+        if(!validate(X,Y, input))
             return;
 
         calculate(X,Y,input)

@@ -12,36 +12,3 @@ function getData(){
 
     return {X, Y};
 }
-
-function valid(X, Y, input){
-    if(X.length !== Y.length){
-        alert("Error! Zbiory X i Y sa roznej dlugosci!");
-        return false;
-    }
-    if(typeof input != "number" || isNaN(input)){
-        alert("Szukana wartosc x nie jest liczba!");
-        return false
-    }
-
-    if(!(isTableValid(X, "X") && isTableValid(Y,"Y")))
-        return false;
-
-    return true;
-}
-
-function isTableValid(array, name) {
-    var invalidIndexes = [];
-
-    for (i = 0; i < array.length; i++) {
-        if (typeof array[i] != "number" || isNaN(array[i])) {
-            invalidIndexes.push(i);
-        }
-    }
-
-    if (Array.isArray(invalidIndexes) && invalidIndexes.length) {
-        alert("Znaleziono bledny typ wartosci w tabeli " + name + " na indeksie/ach " + invalidIndexes);
-        return false;
-    }
-
-    return true;
-}
