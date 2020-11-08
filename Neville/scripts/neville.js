@@ -1,5 +1,4 @@
 function nevilleResult(X, Y, input){
-
 	let len = X.length;
 	let result = Array.from(Array(len), () => new Array(len));
 
@@ -30,4 +29,3 @@ function nevilleFormula(X, Y){
 
 	return math.rationalize(result[result.length-1][result.length-1]);
 }
-

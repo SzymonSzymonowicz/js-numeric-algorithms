@@ -8,7 +8,8 @@ function validate(X, Y, input, table) {
         return false
     }
 
-    if (!(isArrayValid(X, "X", table) && isArrayValid(Y, "Y", table)))
+    //if (!(isArrayValid(X, "X", table) && isArrayValid(Y, "Y", table)))
+    if (!areArraysValid([X,Y], table))
         return false;
 
     // Checking only the X axis, because the values on Y axis can repeat unlike those on X
@@ -18,19 +19,23 @@ function validate(X, Y, input, table) {
     return true;
 }
 
-function isArrayValid(array, name, table) {
+function areArraysValid(arrays, table) {
     var invalidIndexes = [];
 
-    for (i = 0; i < array.length; i++) {
-        if (typeof array[i] != "number" || isNaN(array[i])) {
-            invalidIndexes.push(i);
+    for (array of arrays) {
+        for (i = 0; i < array.length; i++) {
+            if (typeof array[i] != "number" || isNaN(array[i])) {
+                invalidIndexes.push(i);
+            }
         }
     }
 
-    if (Array.isArray(invalidIndexes) && invalidIndexes.length) {
-        alert("Znaleziono bledny typ wartosci w tabeli " + name + " na indeksie/ach " + invalidIndexes);
+    var set = new Set(invalidIndexes);
+
+    if (set.size != 0) {
+        alert("Znaleziono bledne typ wartosci w tabeli na indeksie/ach: " + Array.from(set).sort((a,b) => a-b));
         if(typeof table !== 'undefined')
-            showWrongVals(table, invalidIndexes);
+            showWrongVals(table, Array.from(set));
         return false;
     }
 

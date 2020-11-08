@@ -61,6 +61,9 @@ function drawGraph(X, Y) {
                     gridLines: {
                         zeroLineColor: 'rgba(0,0,0,0.8)',
                         zeroLineWidth: 2
+                    },
+                    ticks : {
+                        beginAtZero : true
                     }
                 }],
                 xAxes: [{
@@ -69,6 +72,9 @@ function drawGraph(X, Y) {
                     gridLines: {
                         zeroLineColor: 'rgba(0,0,0,0.8)',
                         zeroLineWidth: 2
+                    },
+                    ticks : {
+                        beginAtZero : true
                     }
                 }]
             },
