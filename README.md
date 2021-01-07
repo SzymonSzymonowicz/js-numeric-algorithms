@@ -14,5 +14,14 @@ Currently set up [here](https://szymonszymonowicz.github.io/js-numeric-algorithm
 - [AsciiMath](http://asciimath.org/)
 - [MathJax](https://www.mathjax.org/)
 
+# Biscetion method
+The bisection method is an approximation method to find the roots of the given equation by repeatedly dividing the interval.
 
+[Wikipedia page](https://en.wikipedia.org/wiki/Bisection_method)
+
+Currently set up [here](https://szymonszymonowicz.github.io/js-numeric-algorithms/Bisection/index.html)
+
+### Libs
+- [Chart.js](https://www.chartjs.org/)
+- [MathJax](https://www.mathjax.org/)
 
