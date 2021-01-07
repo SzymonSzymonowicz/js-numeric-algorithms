@@ -3,12 +3,24 @@ function validate(a, b, epsilon) {
         alert("Poczatek przedzialu nie jest liczba!");
         return false;
     }
+
     if (typeof b != "number" || isNaN(b)) {
         alert("Koniec przedzialu nie jest liczba!");
         return false;
     }
+
     if (typeof epsilon != "number" || isNaN(epsilon)) {
         alert("Dokladnosc rozwiazania nie jest liczba!");
+        return false;
+    }
+
+    if (a > b){
+        alert("Nieprawidlowy przedzial! Poczatek przedzialu jest wiekszy od jego konca!")
+        return false;
+    }
+
+    if (a == b){
+        alert("Nieprawidlowy przedzial! Oba konce przedzialu są takie same!")
         return false;
     }
 
@@ -19,21 +31,6 @@ function validate(a, b, epsilon) {
 
     if (func(a) * func(b) >= 0) {
         alert("Nie spełniono warunku f(a) * f(b) >= 0");
-        return false;
-    }
-
-    if (a > b){
-        alert("Nieprawidlowy przedzial! Poczatek przedzialu jest wiekszy od jego konca!")
-        return false;
-    }
-
-    if (b < a){
-        alert("Nieprawidlowy przedzial! Koniec przedzialu jest mniejszy od jego poczatku!")
-        return false;
-    }
-
-    if (a == b){
-        alert("Nieprawidlowy przedzial! Oba konce przedzialu są takie same!")
         return false;
     }
 
