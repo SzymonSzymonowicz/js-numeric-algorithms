@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="pl-PL">
+	<meta charset="utf-8">
+	<title>Metoda bisekcji</title>
+	<link rel="stylesheet" href="styles/styles.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+
+	<script type="text/javascript" lang="javascript" src="scripts/getData.js"></script>
+	<script type="text/javascript" lang="javascript" src="scripts/biscetion.js"></script>
+	<script type="text/javascript" lang="javascript" src="scripts/validate.js"></script>
+	<script type="text/javascript" lang="javascript" src="scripts/getResult.js"></script>
+	<script type="text/javascript" lang="javascript" src="scripts/drawGraph.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.5/chartjs-plugin-annotation.js"></script>
+
+	<script type="text/javascript" async
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+</head>
+<body>
+<div id="container">
+	<div id="title">METODA POŁOWIENIA</div>
+	<div id="menu">
+		<div id="inputBar">
+			<div>
+				<span>Równanie:</span>
+			</div>
+			<div>
+				$$x^5 + 3x^2 + \frac{1}{2} \sin(2x+ 1) = 0$$
+			</div>
+
+			<div id="intervalInput" style="display: flex; flex-direction: row">
+				<div style="display: flex">
+					<span>Badany przedział</span>
+				</div>
+				<div class="intervalSection">
+					<span>(</span>
+					<input type="text" id="aInput" name="aInput" class="interval">
+					<span>,</span>
+					<input type="text" id="bInput" name="bInput" class="interval">
+					<span>)</span>
+				</div>
+			</div>
+
+			<div id="epsilonSetting">
+				<label for="epsilonInput">Dokładność rozwiązania</label>
+				<input style="height: 32px" type="text" id="epsilonInput" name="epsilonInput" value="0.5">
+			</div>
+
+			<div id="actionBar">
+				<button id="getResult" onclick="getResult()">Oblicz</button>
+			</div>
+		</div>
+		<div id="resultBar">
+			<div id="graph">
+				<canvas id="myChart" width="400" height="400"></canvas>
+			</div>
+			<div id="formula"></div>
+			<div id="resultX"></div>
+			<div id="resultSteps"></div>
+			<div id="resultExact"></div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
