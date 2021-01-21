@@ -25,3 +25,19 @@ Currently set up [here](https://szymonszymonowicz.github.io/js-numeric-algorithm
 - [Chart.js](https://www.chartjs.org/)
 - [MathJax](https://www.mathjax.org/)
 
+# Differential approximation methods
+Methods for solving differential equations using approximation with a given initial value.
+
+- [Euler's method](https://en.wikipedia.org/wiki/Euler_method)
+
+- [Midpoint method aka Modified Euler's method](https://en.wikipedia.org/wiki/Midpoint_method)
+
+- [Heun's method](https://en.wikipedia.org/wiki/Heun%27s_method)
+
+
+Currently set up [here](https://szymonszymonowicz.github.io/js-numeric-algorithms/ApproximatingDifferentialEquation/index.html)
+
+### Libs
+- [Chart.js](https://www.chartjs.org/)
+- [MathJax](https://www.mathjax.org/)
+
