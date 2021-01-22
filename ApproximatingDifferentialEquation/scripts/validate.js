@@ -24,7 +24,12 @@ function validate(a, b, n) {
         return false;
     }
 
-    if (!isInt(n) || n < 0 || (n + "").indexOf(",") >= 0){
+    if (n == 0) {
+        alert("Liczba przedzialow nie moze wynosic 0!");
+        return false;
+    }
+
+    if (!isInt(n) || n < 0 || (n + "").indexOf(",") >= 0) {
         alert("Liczba podzialow n musi byc liczba naturalna!")
         return false;
     }
